@@ -8,8 +8,8 @@ public class BucketList {
 	String object;
 	Date register_date;
 	Date achieve_date;
-	char is_achieved;
-	char is_marked;
+	String is_achieved;
+	String is_marked;
 	
 	public int getNumber() {
 		return number;
@@ -35,16 +35,16 @@ public class BucketList {
 	public void setAchieve_date(Date achieve_date) {
 		this.achieve_date = achieve_date;
 	}
-	public char getIs_achieved() {
+	public String getIs_achieved() {
 		return is_achieved;
 	}
-	public void setIs_achieved(char is_achieved) {
+	public void setIs_achieved(String is_achieved) {
 		this.is_achieved = is_achieved;
 	}
-	public char getIs_marked() {
+	public String getIs_marked() {
 		return is_marked;
 	}
-	public void setIs_marked(char is_marked) {
+	public void setIs_marked(String is_marked) {
 		this.is_marked = is_marked;
 	}
 	
