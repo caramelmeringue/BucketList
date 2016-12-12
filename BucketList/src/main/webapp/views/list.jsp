@@ -8,14 +8,6 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>버킷리스트</title>
 <link rel="stylesheet" href="/bootstrap/css/bootstrap.css" />
-<style type="text/css">
-:root {
-	var-color-main: #34314C;
-	var-color-sub: #48B7E4;
-	var-color-point-archive: #FF7372;
-	var-color-point-marking: #FFC952;
-}
-</style>
 <style>
 	body {
 		width: 80%;
@@ -31,18 +23,40 @@
 	<br />
 	<div id="register">
 		<form action="/register" method="post" class="form-horizontal">
-			<div class="form-group">
-			    <label class="sr-only" for="object">새로운 목표</label>
-			    <div class="col-sm-11">
-			    	<input type="text" class="form-control" id="object" name="object" placeholder="새로운 목표를 입력하세요">
+			<div class="col-sm-11">
+	    		<input type="text" class="form-control" id="object" name="object" placeholder="새로운 목표를 입력하세요">
+	    	</div>
+			<input type="submit" value="목표등록" class="btn btn-default"/>
+		</form>
+	</div>
+	<br />
+	<div id="search">
+		<form action="/" method="post" class="form-horizontal">
+			<div class="col-sm-11">
+				<div class="pull-left" style="width: 675px">
+	   				<input type="text" class="form-control" name="object" placeholder="검색할 단어를 입력하세요" />
+	   			</div>
+	   			<div class="col-sm-2 row pull-right">
+					<select class="form-control" name="type">
+						<option>전체보기</option>
+						<option>즐겨찾기만 보기</option>
+						<option>완료항목만 보기</option>
+					</select>
 				</div>
-				<input type="submit" value="목표등록" class="btn btn-default" style="margin-left: -5px" />
+				<div class="col-sm-2 pull-right">
+					<select class="form-control" name="order">
+						<option>최신순</option>
+						<option>가나다순</option>
+						<option>등록일순</option>
+					</select>
+				</div>
 			</div>
+			<input type="submit" value="검색하기" class="btn btn-default" />
 		</form>
 	</div>
 	<br />
 	<div id="list">
-		<table class="table table-bordered">
+		<table class="table">
 			<thead>
 				<tr>
 					<td width="50px">번호</td>
