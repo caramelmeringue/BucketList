@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="bucketlist">
+	<select id="getList" resultType="bucketListDomain">
+		SELECT *
+		FROM bucketlist
+		ORDER BY number DESC
+	</select>
+	
+	<insert id="register" parameterType="bucketListDomain">
+		INSERT INTO bucketlist (object) 
+		VALUES ('${object }')
+	</insert>
+	
+	<delete id="delete" parameterType="bucketListDomain">
+		DELETE FROM bucketlist 
+		WHERE number = ${number }
+	</delete>
+	
+	<update id="achieve">
+		UPDATE bucketlist
+		SET is_achieved = CASE WHEN is_achieved = 'N' THEN 'Y' ELSE 'N' END,
+			achieve_date = CASE WHEN achieve_date is null THEN NOW() ELSE null END
+		WHERE number =  ${number }
+	</update>
+	
+	<update id="mark">
+		UPDATE bucketlist
+		SET is_marked = CASE WHEN is_marked = 'N' THEN 'Y' ELSE 'N' END
+		WHERE number = ${number }
+	</update>
+</mapper>
